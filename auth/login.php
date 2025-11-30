@@ -32,16 +32,16 @@
                 <p class="text-muted">Accede a tu cuenta para continuar</p>
             </div>
 
-            <form id="formLogin" method="post">
+            <form id="formLogin">
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Usuario</label>
-                    <input type="text" class="form-control" required>
+                    <input type="text" id="usuario" class="form-control">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Contraseña</label>
-                    <input type="password" class="form-control" required>
+                    <input type="password" id="contrasena" class="form-control">
                 </div>
 
                 <button class="btn btn-primary w-100 py-2 fw-bold">Ingresar</button>
@@ -56,9 +56,10 @@
         </div>
 
     </div>
-
+    <script src="../assets/js/ajaxjquery/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/notify/notify.min.js"></script>
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/ajax.js"></script>
+    <script src="../assets/js/ajaxjquery/ajax.js"></script>
    
 </body>
 

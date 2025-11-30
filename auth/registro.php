@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/toasty/toasty.min.css">
-
     <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
+
 
     <title>QUIZZPRINT | Registro</title>
 
@@ -35,7 +34,7 @@
                 <p class="text-muted">Regístrate para ingresar al sistema y jugar</p>
             </div>
 
-            <form id="formRegistro" method="POST">
+            <form id="formRegistro">
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -61,7 +60,7 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Contraseña</label>
-                    <input type="password" id="contrsena" class="form-control" >
+                    <input type="password" id="contrasena" class="form-control" >
                 </div>
 
                 
@@ -78,10 +77,11 @@
         </div>
 
     </div>
-    <script src="../ajax/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/toasty/toasty.min.js"></script>
-    <script src="../ajax/ajax.js"></script>
+    <script src="../assets/js/ajaxjquery/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/notify/notify.min.js"></script>
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/ajaxjquery/ajax.js"></script>
+
 
 
 
