@@ -39,28 +39,28 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold">Nombres</label>
-                        <input type="text" id="nombre" class="form-control" >
+                        <input type="text" placeholder="Ingrese su nombre" id="nombre" class="form-control" >
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold">Apellidos</label>
-                        <input type="text" id="apellido" class="form-control" >
+                        <input type="text" placeholder="Ingrese su apellido" id="apellido" class="form-control" >
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Correo electrónico</label>
-                    <input type="email" id="email" class="form-control" >
+                    <input type="email" placeholder="ejemplo@gmail.com" id="email" class="form-control" >
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Usuario</label>
-                    <input type="text" id="usuario" class="form-control" >
+                    <input type="text" placeholder="Ingrese su usuario" id="usuario" class="form-control" >
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Contraseña</label>
-                    <input type="password" id="contrasena" class="form-control" >
+                    <input type="password" placeholder="*********" id="contrasena" class="form-control" >
                 </div>
 
                 

@@ -21,7 +21,7 @@ if ($usuario === "" || $contrasena === "") {
 }
 
 // ========================
-// 3. Validación: verificar si el usuario existe
+// 3. Validación: verificar si el usuario esta correcto
 // ========================
 $sql = "SELECT * FROM usuario WHERE usuario_usu='$usuario'";
 $result = $conn->query($sql);
@@ -29,10 +29,13 @@ $result = $conn->query($sql);
 if ($result->num_rows == 0) {
     echo json_encode([
         "ok" => false,
-        "mensaje" => "Usuario incorrecto."
+        "mensaje" => "Usuario incorrecto o no existente."
     ]);
     exit;
 }
+
+
+
 
 // ========================
 // 4. Usuario encontrado → obtener datos
@@ -57,7 +60,6 @@ if ($passGuardada !== $contrasena) {
 // 6. Iniciar sesión
 // ========================
 $_SESSION["usuario_id"] = $datosUsuario["id_usu"]; 
-$_SESSION["usuario"]    = $datosUsuario["usuario_usu"];
 
 // ========================
 // 7. Respuesta final

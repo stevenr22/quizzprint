@@ -50,7 +50,7 @@ $(document).ready(function () {
             success: function (respuesta) {
                 if (respuesta.ok) {
                    // Esta línea ejecuta la redirección a dashboard.php
-                  alert("Login exitoso ✔");
+                  window.location.href = "../views/dashboard.php";
                 } else {
                     $.notify(respuesta.mensaje, "warn");
                 }

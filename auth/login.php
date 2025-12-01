@@ -36,12 +36,12 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Usuario</label>
-                    <input type="text" id="usuario" class="form-control">
+                    <input type="text" id="usuario" placeholder="Ingrese su usuario" class="form-control">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Contraseña</label>
-                    <input type="password" id="contrasena" class="form-control">
+                    <input type="password" placeholder="********" id="contrasena" class="form-control">
                 </div>
 
                 <button class="btn btn-primary w-100 py-2 fw-bold">Ingresar</button>
