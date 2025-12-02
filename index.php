@@ -19,6 +19,9 @@
         .test-btn:hover {
             transform: scale(1.05);
         }
+        .notifyjs-corner {
+            z-index: 999999 !important;
+        }
     </style>
 </head>
 
@@ -77,9 +80,10 @@
                     simuladores y actividades dinámicas diseñadas para estudiantes y profesores.
                 </p>
 
-                <a href="#" class="btn btn-success mt-3 px-4 py-2 btn-lg">
+                <button id="btnComenzar" class="btn btn-success mt-3 px-4 py-2 btn-lg">
                     Comenzar Ahora
-                </a>
+                </button>
+
             </div>
 
             <div class="col-md-6 text-center">
@@ -208,6 +212,12 @@
         <a href="#" class="btn btn-light px-4 py-2 mt-3 fw-bold">Comenzar Ahora</a>
     </section>
 
+    <!-- MODAL -->
+    <?= include("componentes/modales.php"); ?>
+    <!-- FIN MODAL -->
+
+    <script src="assets/js/ajaxjquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/notify/notify.min.js"></script>
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- SCRIPT PARA MINI TEST -->
     <script>
@@ -226,6 +236,31 @@
             });
         });
     </script>
+    <script>
+        const btn = document.getElementById("btnComenzar");
+
+        btn.addEventListener("click", function () {
+            let modal = new bootstrap.Modal(document.getElementById("modalCodigo"));
+            modal.show();
+        });
+
+        // Validación simple del código
+        document.getElementById("btnValidarCodigo").addEventListener("click", function() {
+            const codigo = document.getElementById("inputCodigo").value.trim();
+
+            if (codigo === "") {
+                $.notify("Debes ingresar un código.", "warn");
+                return;
+            }
+
+            $.notify("Código ingresado: " + codigo + "\nRedirigiendo al quizz...", "success");
+            setTimeout(() => {
+                window.location.href = "views/quizz.php";
+            }, 1500);
+
+                    });
+    </script>
+
 
 </body>
 

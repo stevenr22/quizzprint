@@ -15,7 +15,7 @@ $usuario = obtenerUsuarioSesion();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>QUIZZPRINT | Dashboard</title>
+    <title>QUIZZPRINT | Preguntas</title>
 
 </head>
 
@@ -28,10 +28,10 @@ $usuario = obtenerUsuarioSesion();
 
 
     <!-- ================= CONTENIDO ================= -->
-    <section class="container my-5">
+    <section class="container my-3">
 
         <h1 class="dashboard-title mb-2">Perfil</h1>
-        <p class="text-secondary mb-4">Información de tu cuenta.</p>
+        <p class="text-secondary mb-4">Información de tu cuenta | <a href="../views/dashboard.php">Regresar al inicio</a></p>
 
         <div class="row justify-content-center">
             <div class="col-md-8">

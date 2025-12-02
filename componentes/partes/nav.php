@@ -1,7 +1,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm">
         <div class="container">
 
-            <a class="navbar-brand" href="index.php">QUIZZPRINT</a>
+            <a class="navbar-brand" href="../views/dashboard.php">QUIZZPRINT</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
