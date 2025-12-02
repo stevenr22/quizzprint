@@ -1,172 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QUIZZPRINT | Quizz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        #container {
-            background: #fff;
-            padding: 20px;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        #start-count, #quiz-box {
-            display: none;
-        }
-        .btn {
-            background: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .btn:hover {
-            background: #0056b3;
-        }
-        .option {
-            background: #eaeaea;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .timer {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Quizz Básico</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
 </head>
-<body>
-    <div id="container">
 
-        <!-- Contador antes de iniciar -->
-        <div id="start-box">
-            <h2>El quizz está por comenzar...</h2>
-            <p>Prepárate, inicia en:</p>
-            <h1 id="prep-timer">15</h1>
-        </div>
+<body class="bg-light">
 
-        <!-- Preguntas -->
-        <div id="quiz-box">
-            <div class="timer">Tiempo restante: <span id="question-timer">25</span>s</div>
-            <h3 id="question-text"></h3>
-            <div id="options"></div>
-        </div>
+<div class="container text-center mt-5">
+    <h2 class="mb-3">Bienvenido al Quizz</h2>
+    <p>Presiona el botón para comenzar.</p>
 
-        <!-- Final -->
-        <div id="end-box" style="display:none;">
-            <h2>¡Has terminado el quizz!</h2>
-            <p>Gracias por participar.</p>
-        </div>
+    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalInicio">
+        Comenzar
+    </button>
+</div>
 
+<!-- ============================= -->
+<!-- MODAL DE CUENTA REGRESIVA -->
+<!-- ============================= -->
+<div class="modal fade" id="modalInicio" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-3">
+      <h4 class="mb-2">Prepárate</h4>
+      <p>El quiz comenzará en <b id="contadorInicio">15</b> segundos...</p>
     </div>
+  </div>
+</div>
 
-    <script>
-        // ==========================
-        // Simulación de preguntas
-        // ==========================
-        const preguntas = [
-            {
-                pregunta: "¿Cuál es la capital de Francia?",
-                opciones: ["Madrid", "París", "Roma", "Lisboa"],
-                correcta: 1
-            },
-            {
-                pregunta: "¿Cuánto es 5 × 5?",
-                opciones: ["15", "10", "25", "20"],
-                correcta: 2
-            },
-            {
-                pregunta: "El color del cielo es...",
-                opciones: ["Verde", "Rojo", "Azul", "Negro"],
-                correcta: 2
-            }
-        ];
+<!-- ============================= -->
+<!-- MODAL DE PREGUNTA 1 -->
+<!-- ============================= -->
+<div class="modal fade" id="pregunta1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <h5 class="mb-2">Pregunta 1 (25s)</h5>
+      <p>¿Cuál es la capital de Francia?</p>
 
-        let index = 0;
-        let tiempoPregunta = 25;
-        let intervaloPregunta;
+      <button class="btn btn-outline-primary w-100 mb-2" onclick="siguientePregunta(2)">París</button>
+      <button class="btn btn-outline-primary w-100 mb-2" onclick="siguientePregunta(2)">Roma</button>
+      <button class="btn btn-outline-primary w-100" onclick="siguientePregunta(2)">Londres</button>
 
-        const prepTimer = document.getElementById("prep-timer");
-        const startBox = document.getElementById("start-box");
-        const quizBox = document.getElementById("quiz-box");
-        const endBox = document.getElementById("end-box");
-        const questionText = document.getElementById("question-text");
-        const optionsBox = document.getElementById("options");
-        const questionTimer = document.getElementById("question-timer");
+      <p class="mt-3 text-danger">Tiempo restante: <b id="timer1">25</b>s</p>
+    </div>
+  </div>
+</div>
 
-        // ==========================
-        // Contador previo
-        // ==========================
-        let prepCount = 15;
-        const prepInterval = setInterval(() => {
-            prepCount--;
-            prepTimer.textContent = prepCount;
+<!-- ============================= -->
+<!-- MODAL DE PREGUNTA 2 -->
+<!-- ============================= -->
+<div class="modal fade" id="pregunta2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <h5 class="mb-2">Pregunta 2 (25s)</h5>
+      <p>2 + 2 = ?</p>
 
-            if (prepCount <= 0) {
-                clearInterval(prepInterval);
-                startBox.style.display = "none";
-                quizBox.style.display = "block";
-                cargarPregunta();
-            }
-        }, 1000);
+      <button class="btn btn-outline-primary w-100 mb-2" onclick="finalizar()">3</button>
+      <button class="btn btn-outline-primary w-100 mb-2" onclick="finalizar()">4</button>
+      <button class="btn btn-outline-primary w-100" onclick="finalizar()">5</button>
 
-        // ==========================
-        // Cargar pregunta
-        // ==========================
-        function cargarPregunta() {
-            if (index >= preguntas.length) {
-                quizBox.style.display = "none";
-                endBox.style.display = "block";
-                return;
-            }
+      <p class="mt-3 text-danger">Tiempo restante: <b id="timer2">25</b>s</p>
+    </div>
+  </div>
+</div>
 
-            const p = preguntas[index];
-            questionText.textContent = p.pregunta;
-            optionsBox.innerHTML = "";
-            tiempoPregunta = 25;
-            questionTimer.textContent = tiempoPregunta;
+<!-- ============================= -->
+<!-- MODAL FINAL -->
+<!-- ============================= -->
+<div class="modal fade" id="modalFinal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-3">
+      <h4 class="mb-2">¡Quiz Finalizado!</h4>
+      <p>Gracias por participar.</p>
+    </div>
+  </div>
+</div>
 
-            p.opciones.forEach((op, i) => {
-                const div = document.createElement("div");
-                div.className = "option";
-                div.textContent = op;
-                div.onclick = () => {
-                    clearInterval(intervaloPregunta);
-                    index++;
-                    cargarPregunta();
-                };
-                optionsBox.appendChild(div);
-            });
+<script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 
-            intervaloPregunta = setInterval(() => {
-                tiempoPregunta--;
-                questionTimer.textContent = tiempoPregunta;
+<script>
+let inicioTimer;
+let preguntaTimer;
+let currentQuestion = 1;
 
-                if (tiempoPregunta <= 0) {
-                    clearInterval(intervaloPregunta);
-                    index++;
-                    cargarPregunta();
-                }
-            }, 1000);
+/* ================================
+   Cuenta regresiva inicial (15s)
+================================ */
+document.getElementById("modalInicio").addEventListener("shown.bs.modal", () => {
+    let tiempo = 15;
+    let lbl = document.getElementById("contadorInicio");
+
+    inicioTimer = setInterval(() => {
+        tiempo--;
+        lbl.textContent = tiempo;
+
+        if (tiempo <= 0) {
+            clearInterval(inicioTimer);
+            var modalInicio = bootstrap.Modal.getInstance(document.getElementById("modalInicio"));
+            modalInicio.hide();
+            mostrarPregunta(1);
         }
-    </script>
+    }, 1000);
+});
+
+/* ================================
+   Mostrar pregunta N
+================================ */
+function mostrarPregunta(n) {
+    let modal = new bootstrap.Modal(document.getElementById("pregunta" + n));
+    modal.show();
+    iniciarTimerPregunta(n);
+}
+
+/* ================================
+   Timer de cada pregunta (25s)
+================================ */
+function iniciarTimerPregunta(n) {
+    let tiempo = 25;
+    let lbl = document.getElementById("timer" + n);
+
+    preguntaTimer = setInterval(() => {
+        tiempo--;
+        lbl.textContent = tiempo;
+
+        if (tiempo <= 0) {
+            clearInterval(preguntaTimer);
+            siguientePregunta(n + 1);
+        }
+    }, 1000);
+}
+
+/* ================================
+   Pasar a la siguiente pregunta
+================================ */
+function siguientePregunta(n) {
+    clearInterval(preguntaTimer);
+
+    let actual = bootstrap.Modal.getInstance(document.getElementById("pregunta" + (n - 1)));
+    if (actual) actual.hide();
+
+    if (document.getElementById("pregunta" + n)) {
+        mostrarPregunta(n);
+    } else {
+        finalizar();
+    }
+}
+
+/* ================================
+   Final del quizz
+================================ */
+function finalizar() {
+    clearInterval(preguntaTimer);
+
+    let finalModal = new bootstrap.Modal(document.getElementById("modalFinal"));
+    finalModal.show();
+}
+</script>
+
 </body>
 </html>
