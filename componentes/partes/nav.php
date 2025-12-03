@@ -20,13 +20,15 @@
                         <ul class="dropdown-menu dropdown-menu-end shadow">
                             <li>
                                 <a class="dropdown-item" href="../views/perfil.php">
-                                    👤 Ver perfil
+                                    <!-- ICONO DE BOOTSTRAP -->
+                                    <i class="bi bi-person-circle me-2"></i> Mi Perfil
                                 </a>
                             </li>
 
                             <li>
                                 <a class="dropdown-item text-danger" href="../controllers/logoutController.php">
-                                    🔐 Cerrar sesión
+                                    <!-- ICONO DE BOOTSTRAP -->
+                                    <i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión
                                 </a>
                             </li>
                         </ul>

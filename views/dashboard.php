@@ -51,7 +51,7 @@ $usuario = obtenerUsuarioSesion();
                     <p>Crear y gestionar preguntas del quiz.</p>
 
                     <!-- Botón que redirige -->
-                    <a href="../preguntas/registrarPreguntas.php" class="btn btn-primary rounded-circle">
+                    <a href="registrarPreguntas.php" class="btn btn-primary rounded-circle">
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -59,13 +59,17 @@ $usuario = obtenerUsuarioSesion();
 
 
             <!-- Cuestionarios -->
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card-custom">
                     <div class="card-icon"><i class="bi bi-joystick"></i></div>
                     <h4>Cuestionarios</h4>
-                    <p>Organiza cuestionarios para los estudiantes.</p>
+                    <p>Organiza cuestionarios para los estudiantes.</p> -->
+                    <!-- Botón que redirige -->
+                    <!-- <a href="#" class="btn btn-primary rounded-circle">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Resultados -->
             <div class="col-md-4">
@@ -73,6 +77,10 @@ $usuario = obtenerUsuarioSesion();
                     <div class="card-icon"><i class="bi bi-people"></i></div>
                     <h4>Resultados</h4>
                     <p>Consulta los resultados de los participantes.</p>
+                    <!-- Botón que redirige -->
+                    <a href="resutadosPreguntas.php" class="btn btn-primary rounded-circle">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -82,6 +90,10 @@ $usuario = obtenerUsuarioSesion();
                     <div class="card-icon"><i class="bi bi-bar-chart-line"></i></div>
                     <h4>Reportes</h4>
                     <p>Genera reportes de desempeño estudiantil.</p>
+                    <!-- Botón que redirige -->
+                    <a href="reportesGenerales.php" class="btn btn-primary rounded-circle">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 

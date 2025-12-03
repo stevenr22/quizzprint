@@ -14,6 +14,8 @@ $usuario = obtenerUsuarioSesion();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.css">
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>QUIZZPRINT | Preguntas</title>
 
@@ -83,9 +85,12 @@ $usuario = obtenerUsuarioSesion();
                                 <span>•••••••••••</span>
                             </div>
 
-                            <button class="btn btn-primary mt-2" id="btn_editar">
+                           <button class="btn btn-primary mt-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalEditarPerfil">
                                 ✏ Editar perfil
                             </button>
+
 
                         </div>
 
@@ -97,6 +102,8 @@ $usuario = obtenerUsuarioSesion();
 
     </section>
     <!-- MODAL EDITAR -->
+    <?= include("../componentes/modales.php"); ?>
+    <!-- FIN MODAL -->
      
 
 

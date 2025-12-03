@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.css">
+
     <title>QUIZZPRINT | Inicio</title>
     <style>
         .feature-card {
@@ -53,9 +55,12 @@
                 </ul>
 
                 <!-- Botón de acceso rápido -->
-                <a href="auth/login.php" class="btn btn-primary px-3">
-                    Entrar
+                <a href="auth/login.php" class="btn btn-primary rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 50px; height: 50px;">
+                    <i class="bi bi-box-arrow-in-right fs-4"></i>
                 </a>
+
+
 
             </div>
 
@@ -80,9 +85,12 @@
                     simuladores y actividades dinámicas diseñadas para estudiantes y profesores.
                 </p>
 
-                <button id="btnComenzar" class="btn btn-success mt-3 px-4 py-2 btn-lg">
+               <button class="btn btn-success mt-3 px-4 py-2 btn-lg"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalCodigo">
                     Comenzar Ahora
                 </button>
+
 
             </div>
 
@@ -239,11 +247,7 @@
     <script>
         const btn = document.getElementById("btnComenzar");
 
-        btn.addEventListener("click", function () {
-            let modal = new bootstrap.Modal(document.getElementById("modalCodigo"));
-            modal.show();
-        });
-
+       
         // Validación simple del código
         document.getElementById("btnValidarCodigo").addEventListener("click", function() {
             const codigo = document.getElementById("inputCodigo").value.trim();
