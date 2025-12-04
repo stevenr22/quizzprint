@@ -60,7 +60,8 @@
                     Modifica tu información asociada a tu perfil dentro del sistema contable.
                 </p>
 
-                <form id="formEditarPerfil" action="../controllers/actualizar_perfil.php" method="POST">
+                <form id="formEditarPerfil">
+                  <input type="hidden" name="id_usu" id="id_usu" value="<?= $usuario["id_usu"] ?>">
 
                     <div class="mb-3">
                         <label class="form-label">
@@ -70,8 +71,9 @@
                             type="text" 
                             class="form-control" 
                             name="nombre_usu"
+                            id="nombre_usu"
                             value="<?= htmlspecialchars($usuario['nombre_usu']) ?>"
-                            required>
+                            >
                     </div>
 
                     <div class="mb-3">
@@ -82,8 +84,9 @@
                             type="text" 
                             class="form-control" 
                             name="apellido_usu"
+                            id="apellido_usu"
                             value="<?= htmlspecialchars($usuario['apellido_usu']) ?>"
-                            required>
+                            >
                     </div>
 
                     <div class="mb-3">
@@ -94,8 +97,9 @@
                             type="email" 
                             class="form-control" 
                             name="email_usu"
+                            id="email_usu"
                             value="<?= htmlspecialchars($usuario['email_usu']) ?>"
-                            required>
+                            >
                     </div>
 
                     <div class="mb-3">
@@ -106,8 +110,9 @@
                             type="text" 
                             class="form-control" 
                             name="usuario_usu"
+                            id="usuario_usu"
                             value="<?= htmlspecialchars($usuario['usuario_usu']) ?>"
-                            required>
+                            >
                     </div>
 
                     <div class="mb-3">
@@ -118,6 +123,7 @@
                             type="password" 
                             class="form-control" 
                             name="contrasena_usu"
+                            id="contrasena_usu"
                             placeholder="Dejar vacío si no deseas cambiarla">
                     </div>
 
@@ -134,6 +140,51 @@
                     <i class="bi bi-save2 me-1"></i> Guardar cambios
                 </button>
             </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL RESTABLECER CONTRASEÑA -->
+<div class="modal fade" id="modalRestablecer" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-4">
+
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">
+                    <i class="bi bi-shield-lock"></i> Restablecer contraseña
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <form id="formRestablecer">
+                <div class="modal-body">
+
+                    <p class="text-muted mb-3">
+                        Ingresa tu correo electrónico para enviarte las instrucciones de recuperación.
+                    </p>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Correo electrónico</label>
+                        <input type="email"
+                               id="email_recuperacion"
+                               class="form-control"
+                               placeholder="tuemail@ejemplo.com"
+                               required>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-envelope"></i> Enviar enlace
+                    </button>
+                </div>
+            </form>
 
         </div>
     </div>

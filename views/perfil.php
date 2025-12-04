@@ -17,6 +17,11 @@ $usuario = obtenerUsuarioSesion();
     <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.css">
 
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .notifyjs-corner {
+            z-index: 999999 !important;
+        }
+    </style>
     <title>QUIZZPRINT | Preguntas</title>
 
 </head>
@@ -106,9 +111,11 @@ $usuario = obtenerUsuarioSesion();
     <!-- FIN MODAL -->
      
 
-
-
+    <script src="../assets/js/ajaxjquery/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/notify/notify.min.js"></script>
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/ajaxjquery/ajax.js"></script>
+
 </body>
 
 </html>

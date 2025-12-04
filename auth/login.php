@@ -17,6 +17,9 @@
             transform: translateY(-5px);
             transition: .2s ease;
         }
+        .notifyjs-corner {
+            z-index: 999999 !important;
+        }
     </style>
 </head>
 
@@ -47,20 +50,27 @@
                 <button class="btn btn-primary w-100 py-2 fw-bold">Ingresar</button>
 
             </form>
+            <div class="text-center mt-3">
+                <p class="mb-0">¿Olvidaste tu contraseña?</p>
+                <a class="fw-bold" data-bs-toggle="modal" data-bs-target="#modalRestablecer" style="cursor: pointer;"> Restablecer contraseña</a>
 
+            </div>
             <div class="text-center mt-3">
                 <p class="mb-0">¿No tienes cuenta?</p>
                 <a href="registro.php" class="fw-bold">Crear una cuenta</a>
             </div>
+           
 
         </div>
 
     </div>
+
+    <?php include("../componentes/modales.php"); ?>
     <script src="../assets/js/ajaxjquery/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/notify/notify.min.js"></script>
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/ajaxjquery/ajax.js"></script>
-   
+
 </body>
 
 </html>
