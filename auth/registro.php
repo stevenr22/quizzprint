@@ -47,11 +47,21 @@
                         <input type="text" placeholder="Ingrese su apellido" id="apellido" class="form-control" >
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Cedula</label>
+                        <input type="text" placeholder="Ingrese su cedula" id="cedu" class="form-control" >
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Correo electrónico</label>
+                        <input type="email" placeholder="ejemplo@gmail.com" id="email" class="form-control" >
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Correo electrónico</label>
-                    <input type="email" placeholder="ejemplo@gmail.com" id="email" class="form-control" >
+
+
                 </div>
+
+            
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Usuario</label>

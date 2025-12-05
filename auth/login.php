@@ -52,9 +52,11 @@
             </form>
             <div class="text-center mt-3">
                 <p class="mb-0">¿Olvidaste tu contraseña?</p>
-                <a class="fw-bold" data-bs-toggle="modal" data-bs-target="#modalRestablecer" style="cursor: pointer;"> Restablecer contraseña</a>
-
+                <a class="fw-bold" data-bs-toggle="modal" data-bs-target="#modalCedula" style="cursor: pointer;">
+                    Restablecer contraseña
+                </a>
             </div>
+
             <div class="text-center mt-3">
                 <p class="mb-0">¿No tienes cuenta?</p>
                 <a href="registro.php" class="fw-bold">Crear una cuenta</a>

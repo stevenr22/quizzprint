@@ -146,32 +146,26 @@
 </div>
 
 
-<!-- MODAL RESTABLECER CONTRASEÑA -->
-<div class="modal fade" id="modalRestablecer" tabindex="-1">
+<!-- MODAL 1: INGRESAR CÉDULA -->
+<div class="modal fade" id="modalCedula" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content rounded-4">
 
             <div class="modal-header">
                 <h5 class="modal-title fw-bold">
-                    <i class="bi bi-shield-lock"></i> Restablecer contraseña
+                    <i class="bi bi-person-vcard"></i> Verificación de identidad
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
-            <form id="formRestablecer">
+            <form id="formCedula">
                 <div class="modal-body">
 
-                    <p class="text-muted mb-3">
-                        Ingresa tu correo electrónico para enviarte las instrucciones de recuperación.
-                    </p>
+                    <p class="text-muted">Ingresa tu número de cédula para continuar.</p>
 
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Correo electrónico</label>
-                        <input type="email"
-                               id="email_recuperacion"
-                               class="form-control"
-                               placeholder="tuemail@ejemplo.com"
-                               required>
+                        <label class="form-label fw-bold">Número de cédula</label>
+                        <input type="text" placeholder="Ingrese su cedula" id="cedula" name="cedula" class="form-control">
                     </div>
 
                 </div>
@@ -181,7 +175,7 @@
                         Cancelar
                     </button>
                     <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-envelope"></i> Enviar enlace
+                        Continuar
                     </button>
                 </div>
             </form>
@@ -189,3 +183,43 @@
         </div>
     </div>
 </div>
+<!-- MODAL 2: CAMBIO DE CONTRASEÑA -->
+<div class="modal fade" id="modalNuevaClave" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-4">
+
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">
+                    <i class="bi bi-shield-lock"></i> Cambiar contraseña
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <form id="formCambiarClave">
+                <div class="modal-body">
+
+                    <p class="fw-bold mb-1">Usuario identificado:</p>
+                    <p id="nombreUsuario" class="text-primary fw-semibold">—</p>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nueva contraseña</label>
+                        <input type="password" id="nueva_clave" placeholder="Ingrese la nueva contraseña" class="form-control" required>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        Guardar cambios
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+

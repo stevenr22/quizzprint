@@ -3,6 +3,7 @@ $(document).ready(function () {
     $("#formRegistro").on("submit", function (e) {
         e.preventDefault();
         let datos = {
+            cedula: $("#cedu").val(),
             nombre: $("#nombre").val(),
             apellido: $("#apellido").val(),
             email: $("#email").val(),
@@ -98,8 +99,83 @@ $(document).ready(function () {
     });
 
     // ===============================
-    // RESTABLECER CONTRASEÑA
+    // CONSULTAR USUARIO POR CÉDULA
     // ===============================
+    $("#formCedula").on("submit", function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: "../controllers/consultarUsuController.php",
+            method: "POST",
+            data: { cedula: $("#cedula").val() },
+            dataType: "json",
+            success: function (respuesta) {
+
+                if (respuesta.ok) {
+
+                    // Mostrar el nombre en el modal 2
+                    $("#nombreUsuario").text(respuesta.nombre);
+
+                    // Cerrar modal 1 y abrir modal 2
+                    let modal1 = bootstrap.Modal.getInstance(document.getElementById('modalCedula'));
+                    modal1.hide();
+
+                    let modal2 = new bootstrap.Modal(document.getElementById('modalNuevaClave'));
+                    modal2.show();
+
+                    $.notify("Cédula encontrada ✔", "success");
+                }
+                else {
+                    $.notify(respuesta.mensaje, "warn");
+                }
+            },
+            error: function () {
+                $.notify("Error en la petición AJAX ❌", "error");
+            }
+        });
+    });
+
+
+    // ===============================
+    // CAMBIAR CONTRASEÑA
+    // ===============================
+    $("#formCambiarClave").on("submit", function (e) {
+        e.preventDefault();
+
+        let datos = {
+            cedula: $("#cedula").val(),   // reutilizamos la cédula ingresada
+            nueva_clave: $("#nueva_clave").val()
+        };
+
+        $.ajax({
+            url: "../controllers/cambiarClaveController.php",
+            method: "POST",
+            data: datos,
+            dataType: "json",
+            success: function (respuesta) {
+
+                if (respuesta.ok) {
+
+                    $.notify("Contraseña actualizada correctamente ✔", "success");
+
+                    // Cerrar modal
+                    let modal2 = bootstrap.Modal.getInstance(document.getElementById('modalNuevaClave'));
+                    modal2.hide();
+
+                    // Limpiar campos
+                    $("#cedula").val("");
+                    $("#nueva_clave").val("");
+
+                } else {
+                    $.notify(respuesta.mensaje, "warn");
+                }
+            },
+            error: function () {
+                $.notify("Error al actualizar contraseña ❌", "error");
+            }
+        });
+    });
+
 
 
 });

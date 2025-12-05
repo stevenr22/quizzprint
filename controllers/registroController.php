@@ -5,6 +5,7 @@ require "../db/conexion.php";
 // ========================
 // 1. Recibir datos
 // ========================
+$cedula    = trim($_POST["cedula"]);
 $nombre    = trim($_POST["nombre"]);
 $apellido  = trim($_POST["apellido"]);
 $email     = trim($_POST["email"]);
@@ -14,7 +15,7 @@ $contrsena = trim($_POST["contrsena"]);
 // ========================
 // 2. Validación: campos vacíos
 // ========================
-if ($nombre === "" || $apellido === "" || $email === "" || $usuario === "" || $contrsena === "") {
+if ($nombre === "" || $apellido === "" || $email === "" || $usuario === "" || $contrsena === "" || $cedula === "") {
     echo json_encode([
         "ok" => false,
         "mensaje" => "Todos los campos son obligatorios."
@@ -54,6 +55,7 @@ if ($checkUser->num_rows > 0) {
 // 6. Insertar datos
 // ========================
 $sql = "INSERT INTO usuario (
+            cedula_usu,
             nombre_usu, 
             apellido_usu, 
             email_usu, 
@@ -61,6 +63,7 @@ $sql = "INSERT INTO usuario (
             contrasena_usu
         )
         VALUES (
+            '$cedula',
             '$nombre',
             '$apellido',
             '$email',
