@@ -73,6 +73,18 @@
                     <input type="password" placeholder="*********" id="contrasena" class="form-control" >
                 </div>
 
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label fw-bold">Selecciona el nivel de estudio:</label>
+                        <select id="nivel_estudio" class="form-select">
+                            <option value="">-- Seleccionar --</option>
+                            <option value="estudiante">Nivel Estudiante</option>
+                            <option value="universitario">Nivel Estudiante Universitario</option>
+                            <option value="profesional">Nivel Maestro / Profesional</option>
+                        </select>
+                    </div>
+                </div>
+
                 
 
                 <button class="btn btn-success w-100 py-2 fw-bold">Registrar</button>
@@ -91,6 +103,14 @@
     <script src="../assets/js/notify/notify.min.js"></script>
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/ajaxjquery/ajax.js"></script>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const nivel = urlParams.get('nivel');
+        if (nivel) {
+            document.getElementById("nivelEstudio").value = nivel;
+        }
+    </script>
 
 
 

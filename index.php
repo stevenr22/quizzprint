@@ -21,6 +21,7 @@
         .test-btn:hover {
             transform: scale(1.05);
         }
+
         .notifyjs-corner {
             z-index: 999999 !important;
         }
@@ -62,6 +63,7 @@
 
 
 
+
             </div>
 
         </div>
@@ -85,9 +87,9 @@
                     simuladores y actividades dinámicas diseñadas para estudiantes y profesores.
                 </p>
 
-               <button class="btn btn-success mt-3 px-4 py-2 btn-lg"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalCodigo">
+                <button class="btn btn-success mt-3 px-4 py-2 btn-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalCodigo">
                     Comenzar Ahora
                 </button>
 
@@ -227,6 +229,7 @@
     <script src="assets/js/ajaxjquery/jquery-3.7.1.min.js"></script>
     <script src="assets/js/notify/notify.min.js"></script>
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/ajaxjquery/ajax.js"></script>
     <!-- SCRIPT PARA MINI TEST -->
     <script>
         document.querySelectorAll('.test-btn').forEach(btn => {
@@ -243,11 +246,11 @@
                 }
             });
         });
-    </script>
-    <script>
+    
+   
         const btn = document.getElementById("btnComenzar");
 
-       
+
         // Validación simple del código
         document.getElementById("btnValidarCodigo").addEventListener("click", function() {
             const codigo = document.getElementById("inputCodigo").value.trim();
@@ -262,8 +265,13 @@
                 window.location.href = "views/quizz.php";
             }, 1500);
 
-                    });
+        });
+
+
+
+       
     </script>
+
 
 
 </body>

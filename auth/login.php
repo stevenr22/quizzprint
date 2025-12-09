@@ -47,7 +47,7 @@
                     <input type="password" placeholder="********" id="contrasena" class="form-control">
                 </div>
 
-                <button class="btn btn-primary w-100 py-2 fw-bold">Ingresar</button>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Ingresar</button>
 
             </form>
             <div class="text-center mt-3">

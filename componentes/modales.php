@@ -1,42 +1,41 @@
 <!-- MODAL PARA INGRESAR CÓDIGO (Estilo Contable + Bootstrap Icons) -->
 <div class="modal fade" id="modalCodigo" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
 
-      <div class="modal-header" style="background:#0d47a1; color:white;">
-        <h5 class="modal-title">
-          <i class="bi bi-calculator me-2"></i> Acceso al Registro Contable
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
+            <div class="modal-header" style="background:#0d47a1; color:white;">
+                <h5 class="modal-title">
+                    <i class="bi bi-calculator me-2"></i> Acceso al Registro Contable
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
 
-      <div class="modal-body">
-        <p class="mb-3 text-secondary">
-          Ingresa el <strong>código de autorización</strong> proporcionado por el contador o administrador
-          para acceder al módulo contable.
-        </p>
+            <div class="modal-body">
+                <p class="mb-3 text-secondary">
+                    Ingresa el <strong>código de autorización</strong> proporcionado por el contador o administrador
+                    para acceder al módulo contable.
+                </p>
 
-        <label class="form-label fw-bold">Código de Autorización:</label>
-        <input 
-          type="text" 
-          id="inputCodigo" 
-          class="form-control form-control-lg" 
-          placeholder="Ej: CNT-2025"
-        >
-      </div>
+                <label class="form-label fw-bold">Código de Autorización:</label>
+                <input
+                    type="text"
+                    id="inputCodigo"
+                    class="form-control form-control-lg"
+                    placeholder="Ej: CNT-2025">
+            </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Cancelar
+                </button>
 
-        <button type="button" id="btnValidarCodigo" class="btn btn-primary">
-          <i class="bi bi-check2-circle me-1"></i> Validar Código
-        </button>
-      </div>
+                <button type="button" id="btnValidarCodigo" class="btn btn-primary">
+                    <i class="bi bi-check2-circle me-1"></i> Validar Código
+                </button>
+            </div>
 
+        </div>
     </div>
-  </div>
 </div>
 
 
@@ -61,67 +60,63 @@
                 </p>
 
                 <form id="formEditarPerfil">
-                  <input type="hidden" name="id_usu" id="id_usu" value="<?= $usuario["id_usu"] ?>">
+                    <input type="hidden" name="id_usu" id="id_usu" value="<?= $usuario["id_usu"] ?>">
 
                     <div class="mb-3">
                         <label class="form-label">
                             <i class="bi bi-person-lines-fill me-1"></i> Nombre:
                         </label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
+                        <input
+                            type="text"
+                            class="form-control"
                             name="nombre_usu"
                             id="nombre_usu"
-                            value="<?= htmlspecialchars($usuario['nombre_usu']) ?>"
-                            >
+                            value="<?= htmlspecialchars($usuario['nombre_usu']) ?>">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">
                             <i class="bi bi-person-lines-fill me-1"></i> Apellido:
                         </label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
+                        <input
+                            type="text"
+                            class="form-control"
                             name="apellido_usu"
                             id="apellido_usu"
-                            value="<?= htmlspecialchars($usuario['apellido_usu']) ?>"
-                            >
+                            value="<?= htmlspecialchars($usuario['apellido_usu']) ?>">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">
                             <i class="bi bi-envelope-at me-1"></i> Correo electrónico:
                         </label>
-                        <input 
-                            type="email" 
-                            class="form-control" 
+                        <input
+                            type="email"
+                            class="form-control"
                             name="email_usu"
                             id="email_usu"
-                            value="<?= htmlspecialchars($usuario['email_usu']) ?>"
-                            >
+                            value="<?= htmlspecialchars($usuario['email_usu']) ?>">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">
                             <i class="bi bi-person-fill-gear me-1"></i> Nombre de usuario:
                         </label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
+                        <input
+                            type="text"
+                            class="form-control"
                             name="usuario_usu"
                             id="usuario_usu"
-                            value="<?= htmlspecialchars($usuario['usuario_usu']) ?>"
-                            >
+                            value="<?= htmlspecialchars($usuario['usuario_usu']) ?>">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">
                             <i class="bi bi-shield-lock-fill me-1"></i> Nueva contraseña:
                         </label>
-                        <input 
-                            type="password" 
-                            class="form-control" 
+                        <input
+                            type="password"
+                            class="form-control"
                             name="contrasena_usu"
                             id="contrasena_usu"
                             placeholder="Dejar vacío si no deseas cambiarla">
@@ -144,6 +139,12 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
 
 
 <!-- MODAL 1: INGRESAR CÉDULA -->
@@ -221,5 +222,3 @@
         </div>
     </div>
 </div>
-
-

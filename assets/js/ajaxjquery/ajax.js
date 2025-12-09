@@ -8,6 +8,7 @@ $(document).ready(function () {
             apellido: $("#apellido").val(),
             email: $("#email").val(),
             usuario: $("#usuario").val(),
+             
             contrsena: $("#contrasena").val()
         };
 
@@ -175,7 +176,5 @@ $(document).ready(function () {
             }
         });
     });
-
-
-
 });
+
